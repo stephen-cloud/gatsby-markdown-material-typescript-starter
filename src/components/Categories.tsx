@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import _ from 'lodash'
+import { Button, Chip } from '@material-ui/core'
 
 const Categories = props => {
   const data = useStaticQuery(graphql`
@@ -17,7 +18,7 @@ const Categories = props => {
   return (
     <>
       {data.allMarkdownRemark.group.map(category => (
-        <li key={category.fieldValue}>
+        <Button key={category.fieldValue}>
           <Link
             to={`/${_.kebabCase(category.fieldValue)}`}
             key={category.fieldValue}
@@ -26,7 +27,7 @@ const Categories = props => {
             {category.fieldValue}
             <strong> ({category.totalCount})</strong>
           </Link>
-        </li>
+        </Button>
       ))}
     </>
   )
