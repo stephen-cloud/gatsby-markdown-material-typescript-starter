@@ -1,16 +1,14 @@
 import React from 'react'
 import _ from 'lodash'
 import { Link } from 'gatsby'
-import styles from './PostTags.module.scss'
+import { Button } from '@material-ui/core'
 
 const PostTags = ({ tags }) => {
   return (
-    <div className={styles.tagContainer}>
+    <div>
       {tags &&
         tags.map(tag => (
-          <Link key={tag} to={`/tags/${_.kebabCase(tag)}`}>
-            <span>{tag}</span>
-          </Link>
+          <Button><Link key={tag} to={`/tags/${_.kebabCase(tag)}`}>{tag}</Link></Button>
         ))}
     </div>
   )

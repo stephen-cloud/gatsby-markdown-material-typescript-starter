@@ -1,16 +1,17 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Layout from '../layout'
+import PlainLayout from '../layout/PlainLayout'
 import About from '../components/About'
 import config from '../../data/SiteConfig'
 
-const AboutPage = () => (
-  <Layout>
-    <main>
+function AboutPage() {
+  return (
+    <PlainLayout>
       <Helmet title={`About | ${config.siteTitle}`} />
+      
       <About />
-    </main>
-  </Layout>
-)
+    </PlainLayout>
+  )
+}
 
 export default AboutPage

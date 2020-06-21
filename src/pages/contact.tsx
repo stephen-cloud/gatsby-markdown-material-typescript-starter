@@ -1,15 +1,16 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Layout from '../layout'
+import PlainLayout from '../layout/PlainLayout'
 import Contact from '../components/Contact'
 import config from '../../data/SiteConfig'
 
-const ContactPage = () => (
-  <Layout>
-    <main>
+function ContactPage() {
+  return (
+    <PlainLayout>
       <Helmet title={`Contact | ${config.siteTitle}`} />
-      <Contact/>
-    </main>
-  </Layout>
-)
+
+      <Contact />
+    </PlainLayout>
+  )
+}
 export default ContactPage

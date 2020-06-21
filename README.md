@@ -1,21 +1,21 @@
 
 <div align="center">
     <img src="static/logos/logo-1024.png" alt="Logo" width='200px' height='200px'/>
+    <img src="https://www.typescriptlang.org/assets/images/logo.svg" alt="Logo" width='200px' height='200px'/>
+    <img src="https://material-ui.com/static/logo_raw.svg" alt="Logo" width='200px' height='200px'/>
 </div>
 
-# Gatsby Markdown Blog Starter
+# Gatsby Markdown Material TypeScript Blog Starter
 
-A markdown blog starter with all you need features to start markdown blog.
-NOTE: this porject is a developed version of [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter).
+A markdown blog starter with all you need features to start markdown blog using React Material UI and TypeScript.
 
-It aims to provide a minimal base for building advanced GatsbyJS powered Markdown blogs.
+NOTE: This project is a developed version of [gatsby-markdown-blog-starter](https://www.gatsbyjs.org/starters/ammarjabakji/gatsby-markdown-blog-starter/) which is itself a development of [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter).
 
-It has a basic desgin using typography-theme-stow-lake theme.
-
+It aims to provide a minimal base for building advanced Gatsby powered Markdown blogs using Material UI and TypeScript.
 
 ## How can I use this?
 
-If you are a newcomer to Gatsby who's interested in the implementations of most needed features, this is a great place to start.
+If you are a newcomer to Gatsby who's interested in the implementations of most needed features, this is a great place to start. Especially if you're either a dab hand at Material UI and/or TypeScript.
 
 If you are interested in a foundation for building ultra-fast websites, you can use this project as a "minimal" starter.
 
@@ -101,13 +101,13 @@ npm run develop # or gatsby develop
 ```
 
 ## Configuration
-
+****
 Edit the export object in `data/SiteConfig`:
 
 ```js
 module.exports = {
   siteTitle: "Gatsby Material Markdown Blog Starter", // Site title.
-  siteTitleShort: "GA Markdown Material Blog Starter", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+  siteTitleShort: "GA Markdown Material Blog Starter", // Short site title for homescreen (PWA). Preferably should be under **12** characters to prevent truncation.
   siteTitleAlt: "Gatsby Markdown Blog Starter", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://gatsby-markdown-blog-starter.netlify.com", // Domain of your website without pathPrefix.

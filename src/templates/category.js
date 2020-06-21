@@ -1,23 +1,28 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import Layout from '../layout'
+import Layout from '../layout/Layout'
 import PostListing from '../components/PostListing'
 import config from '../../data/SiteConfig'
+import { Typography, Grid } from '@material-ui/core'
 
-const CategoryTemplate = ({ data, pageContext }) => (
-  <Layout>
-    <main>
-      <Helmet title={` "${pageContext.category}" - ${config.siteTitle}`} />
-      <h1>
-Category:
-{' '}
-{pageContext.category}
-</h1>
-      <PostListing postEdges={data.allMarkdownRemark.edges} />
-    </main>
-  </Layout>
-)
+function CategoryTemplate({ data, pageContext }) {
+  return (
+    <Layout>
+      <main>
+        <Helmet title={` "${pageContext.category}" - ${config.siteTitle}`} />
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Typography variant="h4">Category: {pageContext.category}</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <PostListing postEdges={data.allMarkdownRemark.edges} />
+          </Grid>
+        </Grid>
+      </main>
+    </Layout>
+  )
+}
 
 export default CategoryTemplate
 
