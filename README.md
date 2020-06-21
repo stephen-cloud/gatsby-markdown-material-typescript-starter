@@ -1,4 +1,6 @@
 
+![Gatsby Publish](https://github.com/stephen-cloud/gatsby-markdown-material-typescript-starter/workflows/Gatsby%20Publish/badge.svg)
+
 <div align="center">
     <img src="static/logos/logo-1024.png" alt="Logo" width='200px' height='200px'/>
     <p style="font-size: 64px;">TypeScript<p>
