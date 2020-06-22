@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import _ from 'lodash'
 import { Theme, Button, makeStyles, createStyles } from '@material-ui/core'
 
@@ -29,14 +29,10 @@ const Categories = (props: any) => {
   return (
     <div className={classes.root}>
       {data.allMarkdownRemark.group.map((category: any) => (
-        <Button key={category.fieldValue}>
-          <Link
-            to={`/${_.kebabCase(category.fieldValue)}`}
-            key={category.fieldValue}
-            activeClassName={props.activeClassName}
-          >
-            {category.fieldValue} / {category.totalCount}
-          </Link>
+        <Button color="primary" key={category.fieldValue}
+          href={`/${_.kebabCase(category.fieldValue)}`}
+        >
+          {category.fieldValue} / {category.totalCount}
         </Button>
       ))}
     </div>

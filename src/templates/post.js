@@ -1,13 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../layout/Layout'
 import PostTags from '../components/PostTags'
 import SocialLinks from '../components/SocialLinks'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import './prism-okaidia.css'
-import { Typography, Grid, IconButton, makeStyles, createStyles, Theme } from '@material-ui/core'
+import { Typography, Grid, IconButton, makeStyles, createStyles } from '@material-ui/core'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 

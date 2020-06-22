@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import config from '../../data/SiteConfig'
 import { AppBar, IconButton, Toolbar, Typography, Fab, Button, Theme, makeStyles, createStyles } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';

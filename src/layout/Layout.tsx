@@ -10,14 +10,17 @@ import themes from '../themes'
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
+    // display: 'flex',
+    // flexDirection: 'column',
+    // minHeight: '100vh',
+    // background: 'green'
   },
   main: {
-    marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(2)
+    margin: theme.spacing(8, 8),
   },
+  footer: {
+    margin: theme.spacing(0, 3),
+  }
 }))
 
 type ThemeMode = 'light' | 'dark'
@@ -38,13 +41,17 @@ function Layout({ children, container = false }) {
         <Header siteTitle={config.siteTitle} onToggleTheme={toggleTheme} theme={theme} />
         <Categories />
 
-        {container ? (
-          <Container component="main" maxWidth="md" className={classes.main}>
-            {children}
-          </Container>
-        ) : (
-            <main>{children}</main>
-          )}
+        <div className={classes.main}>
+          {container ? (
+            <Container component="main">
+              {children}
+            </Container>
+          ) : (
+              <main>{children}</main>
+            )}
+        </div>
+      </div>
+      <div className={classes.footer}>
         <Footer />
       </div>
     </ThemeProvider>

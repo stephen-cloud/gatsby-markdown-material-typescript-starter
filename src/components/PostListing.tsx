@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { Typography, Grid } from '@material-ui/core'
+import { Typography, Grid, Button } from '@material-ui/core'
 import Categories from './Categories'
 import Layout from '../layout/Layout'
 
@@ -33,16 +32,15 @@ const PostListing = ({ postEdges }) => {
               <article >
                 <Grid container spacing={1}>
                   <Grid item xs={12}>
-                    <Typography variant="h5">
-                      <Link to={post.path} key={post.title}>
+                    <Button color="primary" href={post.path} key={post.title}>
+                      <Typography variant="h5">
                         {post.title}
-                      </Link>
-                    </Typography>
+                      </Typography>
+                    </Button>
                   </Grid>
                   <Grid item xs={12}>
                     <Typography variant="caption">
-                      {post.date} &mdash; <span>{post.categories.join(' / ')}</span>{' '}
-                &mdash; {post.timeToRead} Min Read{' '}
+                      {post.date} &mdash; <span>{post.categories.join(' / ')}</span>{' '} &mdash; {post.timeToRead} Min Read{' '}
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>
