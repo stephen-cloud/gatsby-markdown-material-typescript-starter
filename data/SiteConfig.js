@@ -1,7 +1,7 @@
 const config = {
-  siteTitle: 'Gatsby Material Markdown Blog Starter', // Site title.
-  siteTitleShort: 'Gatsby Material Markdown Blog Starter', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteTitleAlt: 'Gatsby Material Markdown Blog Starter', // Alternative site title for SEO.
+  siteTitle: 'Gatsby Markdown Material TypeScript Blog Starter', // Site title.
+  siteTitleShort: 'Gatsby Markdown Material TypeScript Blog Starter', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+  siteTitleAlt: 'Gatsby Markdown Material TypeScript Blog Starter', // Alternative site title for SEO.
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
   siteUrl: 'https://gatsby-markdown-blog-starter.netlify.com', // Domain of your website without pathPrefix.
   pathPrefix: '', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.

@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 
-const Categories = props => {
+const Categories = (props: any) => {
   const classes = useStyles()
 
   const data = useStaticQuery(graphql`
@@ -28,7 +28,7 @@ const Categories = props => {
 
   return (
     <div className={classes.root}>
-      {data.allMarkdownRemark.group.map(category => (
+      {data.allMarkdownRemark.group.map((category: any) => (
         <Button key={category.fieldValue}>
           <Link
             to={`/${_.kebabCase(category.fieldValue)}`}

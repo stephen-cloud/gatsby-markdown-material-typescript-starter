@@ -8,8 +8,8 @@ const useStyles = makeStyles((theme: Theme) =>
     large: {
       width: theme.spacing(8),
       height: theme.spacing(8),
-    },
-  }),
+    }
+  })
 );
 
 function Bio() {

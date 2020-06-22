@@ -21,7 +21,6 @@ module.exports = {
     "gatsby-plugin-typescript",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
-    "gatsby-plugin-htaccess",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -35,12 +34,6 @@ module.exports = {
         name: "posts",
         path: `${__dirname}/content/`
       }
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
     },
     {
       resolve: "gatsby-transformer-remark",

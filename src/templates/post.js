@@ -7,7 +7,7 @@ import SocialLinks from '../components/SocialLinks'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import './prism-okaidia.css'
-import { Typography, Grid, Fab, makeStyles, createStyles, Theme } from '@material-ui/core'
+import { Typography, Grid, IconButton, makeStyles, createStyles, Theme } from '@material-ui/core'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
@@ -53,9 +53,9 @@ export default ({ data, pageContext }) => {
         <Grid item xs={12}>
           <Grid container alignItems="center" spacing={2}>
             <Grid item xs={12} md={1}>
-              <Fab href={prevslug} aria-label="previous">
+              <IconButton href={prevslug} aria-label="previous">
                 <NavigateBeforeIcon />
-              </Fab>
+              </IconButton>
             </Grid>
             <Grid item xs={12} md={5}>
               <Typography variant="body1">
@@ -68,9 +68,9 @@ export default ({ data, pageContext }) => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={1}>
-              <Fab className={classes.right} href={nextslug} aria-label="next">
+              <IconButton className={classes.right} href={nextslug} aria-label="next">
                 <NavigateNextIcon />
-              </Fab>
+              </IconButton>
             </Grid>
           </Grid>
         </Grid>
