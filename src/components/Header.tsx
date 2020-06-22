@@ -3,7 +3,7 @@ import config from '../../data/SiteConfig'
 import { AppBar, IconButton, Toolbar, Typography, Fab, Button, Theme, makeStyles, createStyles } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import HelpIcon from '@material-ui/icons/Help';
-import CallIcon from '@material-ui/icons/Call';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import Brightness4SharpIcon from '@material-ui/icons/Brightness4Sharp';
 
@@ -41,7 +41,7 @@ function Header({ siteTitle = '', onToggleTheme }: HeaderProps) {
             <HelpIcon />
           </IconButton>
           <IconButton href="/contact" aria-label="contact">
-            <CallIcon />
+            <AlternateEmailIcon />
           </IconButton>
           <IconButton href="/bio" aria-label="bio">
             <MenuBookIcon />
