@@ -4,28 +4,22 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Categories from '../components/Categories'
 import config from '../../data/SiteConfig'
-import { Container, Theme, CssBaseline, makeStyles, ThemeProvider } from '@material-ui/core'
+import { Container, Theme, CssBaseline, makeStyles, ThemeProvider, Grid } from '@material-ui/core'
 import useLocalStorage from '../hooks/useLocalStorage'
 import themes from '../themes'
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    // display: 'flex',
-    // flexDirection: 'column',
-    // minHeight: '100vh',
-    // background: 'green'
+  body: {
+    margin: theme.spacing(3, 0, 0, 10)
   },
-  main: {
-    margin: theme.spacing(8, 8),
-  },
-  footer: {
-    margin: theme.spacing(0, 3),
+  head: {
+    margin: theme.spacing(0)
   }
 }))
 
 type ThemeMode = 'light' | 'dark'
 
-function Layout({ children, container = false }) {
+function Layout({ children, container = false, categories = true }) {
   const classes = useStyles()
   const [theme, setTheme] = useLocalStorage('theme', 'light')
 
@@ -36,25 +30,35 @@ function Layout({ children, container = false }) {
   return (
     <ThemeProvider theme={themes[theme as ThemeMode]}>
       <CssBaseline />
-      <div className={classes.root}>
-        <Helmet title={config.siteDescription} defer={false} />
+      <Helmet title={config.siteDescription} defer={false} />
+      <div className={classes.head}>
         <Header siteTitle={config.siteTitle} onToggleTheme={toggleTheme} theme={theme} />
-        <Categories />
+      </div>
 
-        <div className={classes.main}>
-          {container ? (
-            <Container component="main">
-              {children}
-            </Container>
+      <div className={classes.body}>
+        <Grid container spacing={5}>
+          {categories ? (
+            <Grid item xs={12}>
+              <Categories />
+            </Grid>
           ) : (
-              <main>{children}</main>
-            )}
-        </div>
+            <div/>
+          ) }
+          <Grid item xs={12}>
+            {container ? (
+              <Container component="main">
+                {children}
+              </Container>
+            ) : (
+                <main>{children}</main>
+              )}
+          </Grid>
+          <Grid item xs={12}>
+            <Footer />
+          </Grid>
+        </Grid>
       </div>
-      <div className={classes.footer}>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    </ThemeProvider >
   )
 }
 

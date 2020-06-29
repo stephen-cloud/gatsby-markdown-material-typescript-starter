@@ -79,23 +79,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
 
-  postsEdges.sort((postA, postB) => {
-    const dateA = moment(
-      postA.node.frontmatter.date,
-      siteConfig.dateFromFormat
-    );
-
-    const dateB = moment(
-      postB.node.frontmatter.date,
-      siteConfig.dateFromFormat
-    );
-
-    if (dateA.isBefore(dateB)) return 1;
-    if (dateB.isBefore(dateA)) return -1;
-
-    return 0;
-  });
-
   postsEdges.forEach((edge, index) => {
     if (edge.node.frontmatter.tags) {
       edge.node.frontmatter.tags.forEach(tag => {
@@ -126,7 +109,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     });
   });
- // Generate link foreach tag page
+
   tagSet.forEach(tag => {
     createPage({
       path: `/tags/${_.kebabCase(tag)}/`,

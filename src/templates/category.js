@@ -13,7 +13,7 @@ function CategoryTemplate({ data, pageContext }) {
         <Helmet title={` "${pageContext.category}" - ${config.siteTitle}`} />
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Typography variant="h4">Category: {pageContext.category}</Typography>
+            <Typography variant="h6">Category: {pageContext.category}</Typography>
           </Grid>
           <Grid item xs={12}>
             <PostListing postEdges={data.allMarkdownRemark.edges} />
