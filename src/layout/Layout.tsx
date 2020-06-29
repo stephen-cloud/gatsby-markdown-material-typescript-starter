@@ -4,18 +4,21 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Categories from '../components/Categories'
 import config from '../../data/SiteConfig'
-import { Container, Theme, CssBaseline, makeStyles, ThemeProvider, Grid } from '@material-ui/core'
+import { Container, Theme, CssBaseline, makeStyles, ThemeProvider, Grid, Divider } from '@material-ui/core'
 import useLocalStorage from '../hooks/useLocalStorage'
 import themes from '../themes'
 
 const useStyles = makeStyles((theme: Theme) => ({
   body: {
-    margin: theme.spacing(3, 0, 0, 10)
+    margin: theme.spacing(3, 3, 0, 3)
   },
   head: {
     margin: theme.spacing(0)
-  }
-}))
+  },
+  right: {
+    float: 'right'
+  },
+}));
 
 type ThemeMode = 'light' | 'dark'
 
@@ -30,6 +33,7 @@ function Layout({ children, container = false, categories = true }) {
   return (
     <ThemeProvider theme={themes[theme as ThemeMode]}>
       <CssBaseline />
+
       <Helmet title={config.siteDescription} defer={false} />
       <div className={classes.head}>
         <Header siteTitle={config.siteTitle} onToggleTheme={toggleTheme} theme={theme} />
@@ -42,8 +46,8 @@ function Layout({ children, container = false, categories = true }) {
               <Categories />
             </Grid>
           ) : (
-            <div/>
-          ) }
+              <div />
+            )}
           <Grid item xs={12}>
             {container ? (
               <Container component="main">
@@ -54,7 +58,15 @@ function Layout({ children, container = false, categories = true }) {
               )}
           </Grid>
           <Grid item xs={12}>
+            <Divider />
+          </Grid>
+          <Grid item xs={12} md={6}>
             <Footer />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <div className={classes.right}>
+              <Footer />
+            </div>
           </Grid>
         </Grid>
       </div>

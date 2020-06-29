@@ -1,4 +1,3 @@
-
 ![Gatsby Publish](https://github.com/stephen-cloud/gatsby-markdown-material-typescript-starter/workflows/Gatsby%20Publish/badge.svg)
 
 <div align="center">
