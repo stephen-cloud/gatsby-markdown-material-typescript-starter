@@ -1,19 +1,23 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import _ from 'lodash'
-import { Theme, Button, makeStyles, createStyles } from '@material-ui/core'
+import { Theme, Button, makeStyles, createStyles, Link } from '@material-ui/core'
+
+interface Category {
+  fieldValue: string,
+  totalCount: number
+}
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      margin: theme.spacing(2, 2)
+    categoryLink: {
+      margin: theme.spacing(0, 3, 0, 0)
     },
   }),
 );
 
-
-const Categories = (props: any) => {
-  const classes = useStyles()
+const Categories = () => {
+  const classes = useStyles();
 
   const data = useStaticQuery(graphql`
     query {
@@ -27,14 +31,15 @@ const Categories = (props: any) => {
   `)
 
   return (
-    <div className={classes.root}>
-      {data.allMarkdownRemark.group.map((category: any) => (
-        <Button color="primary" key={category.fieldValue}
-          href={`/${_.kebabCase(category.fieldValue)}`}
-        >
-          {category.fieldValue} / {category.totalCount}
-        </Button>
-      ))}
+    <div>
+      {
+        data.allMarkdownRemark.group.map((category: Category) => (
+          <Link underline="none" className={classes.categoryLink} key={category.fieldValue}
+            href={`/${_.kebabCase(category.fieldValue)}`} >
+            {category.fieldValue} ({category.totalCount})
+          </Link>
+        ))
+      }
     </div>
   )
 }

@@ -6,7 +6,6 @@ import PostTags from '../components/PostTags'
 import SocialLinks from '../components/SocialLinks'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
-import './prism-okaidia.css'
 import { Typography, Grid, IconButton, makeStyles, createStyles } from '@material-ui/core'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
@@ -49,11 +48,10 @@ export default ({ data, pageContext }) => {
         <Grid item xs={12}>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
         </Grid>
-
         <Grid item xs={12}>
           <Grid container alignItems="center" spacing={2}>
             <Grid item xs={12} md={1}>
-              <IconButton href={prevslug} aria-label="previous">
+              <IconButton href={prevslug} arialabel="previous">
                 <NavigateBeforeIcon />
               </IconButton>
             </Grid>
@@ -68,7 +66,7 @@ export default ({ data, pageContext }) => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={1}>
-              <IconButton className={classes.right} href={nextslug} aria-label="next">
+              <IconButton className={classes.right} href={nextslug} arialabel="next">
                 <NavigateNextIcon />
               </IconButton>
             </Grid>

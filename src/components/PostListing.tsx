@@ -1,13 +1,10 @@
 import React from 'react'
-import { Typography, Grid, Button } from '@material-ui/core'
-import Categories from './Categories'
-import Layout from '../layout/Layout'
+import { Typography, Grid, Link } from '@material-ui/core'
 
 const PostListing = ({ postEdges }) => {
   const getPostList = () => {
-    const postList = []
-    postEdges.forEach(postEdge => {
-      postList.push({
+    const postList = postEdges.map((postEdge: any) => {
+      return {
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
         categories: postEdge.node.frontmatter.categories,
@@ -16,8 +13,9 @@ const PostListing = ({ postEdges }) => {
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead
-      })
+      }
     })
+
     return postList
   }
 
@@ -25,18 +23,18 @@ const PostListing = ({ postEdges }) => {
 
   return (
     <>
-      <Grid container spacing={5}>
-        {/* Your post list here. */
-          postList.map(post => (
+      <Grid container spacing={3}>
+        {
+          postList.map((post: any) => (
             <Grid item xs={12} md={6}>
               <article >
                 <Grid container spacing={1}>
                   <Grid item xs={12}>
-                    <Button color="primary" href={post.path} key={post.title}>
+                    <Link underline="none" href={post.path} key={post.title}>
                       <Typography variant="h5">
                         {post.title}
                       </Typography>
-                    </Button>
+                    </Link>
                   </Grid>
                   <Grid item xs={12}>
                     <Typography variant="caption">

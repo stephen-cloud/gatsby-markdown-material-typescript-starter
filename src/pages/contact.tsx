@@ -1,16 +1,16 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import PlainLayout from '../layout/PlainLayout'
+import Layout from '../layout/Layout'
 import Contact from '../components/Contact'
 import config from '../../data/SiteConfig'
 
 function ContactPage() {
   return (
-    <PlainLayout>
+    <Layout categories={false}>
       <Helmet title={`Contact | ${config.siteTitle}`} />
 
       <Contact />
-    </PlainLayout>
+    </Layout>
   )
 }
 export default ContactPage

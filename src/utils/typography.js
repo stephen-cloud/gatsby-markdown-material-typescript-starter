@@ -1,7 +1,8 @@
 import Typography from "typography"
-import fairyGatesTheme from 'typography-theme-stow-lake'
+import gitHubTheme from 'typography-theme-github'
 
-const typography = new Typography(fairyGatesTheme)
+// const typography = new Typography(fairyGatesTheme)
+const typography = new Typography(gitHubTheme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
