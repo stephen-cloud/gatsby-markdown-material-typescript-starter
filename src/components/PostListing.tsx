@@ -1,7 +1,5 @@
 import React from 'react'
-import { Typography, Grid, Link, Divider } from '@material-ui/core'
-import Categories from './Categories'
-import Layout from '../layout/Layout'
+import { Typography, Grid, Link } from '@material-ui/core'
 
 const PostListing = ({ postEdges }) => {
   const getPostList = () => {

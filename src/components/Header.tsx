@@ -1,6 +1,6 @@
 import React from 'react'
 import config from '../../data/SiteConfig'
-import { AppBar, IconButton, Toolbar, Typography, Fab, Button, Theme, makeStyles, createStyles } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Typography, Theme, makeStyles, createStyles } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import HelpIcon from '@material-ui/icons/Help';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
@@ -34,7 +34,7 @@ function Header({ siteTitle = '', onToggleTheme }: HeaderProps) {
           <IconButton href="/" aria-label="home">
             <HomeIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" >
+          <Typography color="inherit" className={classes.title} variant="h6" >
             {config.siteTitle}
           </Typography>
           <IconButton href="/about" aria-label="about">
