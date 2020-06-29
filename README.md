@@ -19,13 +19,14 @@ It aims to provide a minimal base for building advanced Gatsby powered Markdown 
 
 If you are a newcomer to Gatsby who's interested in the implementations of most needed features, this is a great place to start. Especially if you're either a dab hand at Material UI and/or TypeScript.
 
-If you are interested in a foundation for building ultra-fast websites, you can use this project as a "minimal" starter using the tech above.
+If you are interested in a foundation for building ultra-fast websites, you can use this project as a "minimal" starter using the tech above, including if you want to take a loo at TypeScript.
 
-[Demo website.](https://gatsby-markdown-blog-starter.netlify.com)
+[Demo website.](http://gatsby-markdown-material-typescript-starter.stephen.cloud/)
 
 ## Features
 
 - Gatsby v2 support
+- TypeScript and TSX soup-to-nuts
 - Blazing fast loading times thanks to pre-rendered HTML and automatic chunk loading of JS files
 - Separate components for everything
 - High configurability:
