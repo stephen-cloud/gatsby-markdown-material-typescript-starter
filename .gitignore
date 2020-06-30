@@ -63,4 +63,3 @@ bundle-stats.json
 
 # macOS
 .DS_Store
-yarn.lock
