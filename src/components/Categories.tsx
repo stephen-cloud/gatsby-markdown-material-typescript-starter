@@ -34,7 +34,7 @@ const Categories = () => {
     <div>
       {
         data.allMarkdownRemark.group.map((category: Category) => (
-          <Link underline="none" className={classes.categoryLink} key={category.fieldValue}
+          <Link underline="none" variant="body1" className={classes.categoryLink} key={category.fieldValue}
             href={`/${_.kebabCase(category.fieldValue)}`} >
             {category.fieldValue} ({category.totalCount})
           </Link>

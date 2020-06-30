@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const PostTags = ({ tags }) => {
+const PostTags = ({ tags }: Tags) => {
   const classes = useStyles()
 
   return (
     <div>
       {tags &&
         tags.map(tag => (
-          <Link className={classes.tagSpacing} underline="none" key={tag} href={`/tags/${_.kebabCase(tag)}`}>{tag}</Link>
+          <Link className={classes.tagSpacing} variant="body1" underline="none" key={tag} href={`/tags/${_.kebabCase(tag)}`}>{tag}</Link>
         ))}
     </div>
   )

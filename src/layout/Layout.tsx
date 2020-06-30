@@ -10,13 +10,10 @@ import themes from '../themes'
 
 const useStyles = makeStyles((theme: Theme) => ({
   body: {
-    margin: theme.spacing(3, 3, 0, 3)
+    margin: theme.spacing(3, 8, 0, 8)
   },
   head: {
     margin: theme.spacing(0)
-  },
-  right: {
-    float: 'right'
   },
 }));
 
@@ -58,15 +55,7 @@ function Layout({ children, container = false, categories = true }) {
               )}
           </Grid>
           <Grid item xs={12}>
-            <Divider />
-          </Grid>
-          <Grid item xs={12} md={6}>
             <Footer />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <div className={classes.right}>
-              <Footer />
-            </div>
           </Grid>
         </Grid>
       </div>

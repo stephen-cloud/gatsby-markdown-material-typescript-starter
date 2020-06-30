@@ -12,7 +12,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/url-join": "^4.0.0",
     "acorn": "^7.3.1",
-    "gatsby": "^2.23.7",
+    "gatsby": "^2.23.12",
     "gatsby-cli": "^2.12.48",
     "gatsby-plugin-catch-links": "^2.3.5",
     "gatsby-plugin-feed": "^2.5.5",
