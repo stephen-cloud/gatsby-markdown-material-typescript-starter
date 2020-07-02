@@ -4,9 +4,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Categories from '../components/Categories'
 import config from '../../data/SiteConfig'
-import { Container, Theme, CssBaseline, makeStyles, ThemeProvider, Grid, Divider } from '@material-ui/core'
-import useLocalStorage from '../hooks/useLocalStorage'
-import themes from '../themes'
+import { Container, Theme, CssBaseline, makeStyles, Grid } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) => ({
   body: {
@@ -17,23 +15,16 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-type ThemeMode = 'light' | 'dark'
-
 function Layout({ children, container = false, categories = true }) {
   const classes = useStyles()
-  const [theme, setTheme] = useLocalStorage('theme', 'light')
-
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
 
   return (
-    <ThemeProvider theme={themes[theme as ThemeMode]}>
+    <>
       <CssBaseline />
 
       <Helmet title={config.siteDescription} defer={false} />
       <div className={classes.head}>
-        <Header siteTitle={config.siteTitle} onToggleTheme={toggleTheme} theme={theme} />
+        <Header siteTitle={config.siteTitle}/>
       </div>
 
       <div className={classes.body}>
@@ -59,7 +50,7 @@ function Layout({ children, container = false, categories = true }) {
           </Grid>
         </Grid>
       </div>
-    </ThemeProvider >
+    </>
   )
 }
 

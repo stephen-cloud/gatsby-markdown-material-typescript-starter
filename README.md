@@ -27,6 +27,9 @@ If you are interested in a foundation for building ultra-fast websites, you can 
 - Gatsby v2 support
 - TypeScript and TSX soup-to-nuts
 - Blazing fast loading times thanks to pre-rendered HTML and automatic chunk loading of JS files
+- Material UI
+- Responsive
+- Material light/dark mode toggle
 - GitHub actions for publishing to GitHub pages
 - Separate components for everything
 - High configurability:

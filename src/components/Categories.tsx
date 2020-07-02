@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme: Theme) =>
     categoryLink: {
       margin: theme.spacing(0, 3, 0, 0)
     },
+    noUnderline: {
+      "text-decoration": "none"
+    }
   }),
 );
 
@@ -34,7 +37,7 @@ const Categories = () => {
     <div>
       {
         data.allMarkdownRemark.group.map((category: Category) => (
-          <Link underline="none" variant="body1" className={classes.categoryLink} key={category.fieldValue}
+          <Link className={classes.noUnderline} underline="none" variant="body1" className={classes.categoryLink} key={category.fieldValue}
             href={`/${_.kebabCase(category.fieldValue)}`} >
             {category.fieldValue} ({category.totalCount})
           </Link>

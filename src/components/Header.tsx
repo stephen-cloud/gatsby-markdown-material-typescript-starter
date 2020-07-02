@@ -24,7 +24,7 @@ export interface HeaderProps {
   onToggleTheme: () => void
 }
 
-function Header({ siteTitle = '', onToggleTheme }: HeaderProps) {
+function Header({ siteTitle = ''}: HeaderProps) {
   const classes = useStyles();
 
   return (
@@ -46,7 +46,7 @@ function Header({ siteTitle = '', onToggleTheme }: HeaderProps) {
           <IconButton href="/bio" aria-label="bio">
             <MenuBookIcon />
           </IconButton>
-          <IconButton onClick={onToggleTheme} aria-label="light dark">
+          <IconButton  aria-label="light dark">
             <Brightness4SharpIcon />
           </IconButton>
         </Toolbar>
