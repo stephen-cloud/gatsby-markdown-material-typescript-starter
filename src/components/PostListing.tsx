@@ -1,5 +1,5 @@
-import React from 'react'
-import { Typography, Grid, Link } from '@material-ui/core'
+import React from "react";
+import { Typography, Grid, Link } from "@material-ui/core";
 
 const PostListing = ({ postEdges }) => {
   const getPostList = () => {
@@ -12,46 +12,44 @@ const PostListing = ({ postEdges }) => {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
-      }
-    })
+        timeToRead: postEdge.node.timeToRead,
+      };
+    });
 
-    return postList
-  }
+    return postList;
+  };
 
-  const postList = getPostList()
+  const postList = getPostList();
 
   return (
     <>
       <Grid container spacing={3}>
-        {
-          postList.map((post: any) => (
-            <Grid item xs={12} md={6}>
-              <article >
-                <Grid container spacing={1}>
-                  <Grid item xs={12}>
-                    <Link underline="none" href={post.path} key={post.title}>
-                      <Typography variant="h5">
-                        {post.title}
-                      </Typography>
-                    </Link>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Typography variant="caption">
-                      {post.date} &mdash; <span>{post.categories.join(' / ')}</span>{' '} &mdash; {post.timeToRead} Min Read{' '}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Typography variant="body1">{post.excerpt}</Typography>
-                  </Grid>
+        {postList.map((post: any, i: number) => (
+          <Grid item xs={12} md={6} key={i}>
+            <article>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Link underline="none" href={post.path} key={post.title}>
+                    <Typography variant="h5">{post.title}</Typography>
+                  </Link>
                 </Grid>
-              </article>
-            </Grid>
-          ))
-        }
+                <Grid item xs={12}>
+                  <Typography variant="caption">
+                    {post.date} &mdash;{" "}
+                    <span>{post.categories.join(" / ")}</span> &mdash;{" "}
+                    {post.timeToRead} Min Read{" "}
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body1">{post.excerpt}</Typography>
+                </Grid>
+              </Grid>
+            </article>
+          </Grid>
+        ))}
       </Grid>
     </>
-  )
-}
+  );
+};
 
-export default PostListing
+export default PostListing;

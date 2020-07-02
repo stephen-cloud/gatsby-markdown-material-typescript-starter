@@ -1,8 +1,8 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb-typescript", "prettier"],
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
-    "no-unused-vars":"warn",
+    "no-unused-vars": "warn",
     "no-else-return": "off",
     "react/no-did-update-set-state": "off",
     "prefer-destructuring": "off",

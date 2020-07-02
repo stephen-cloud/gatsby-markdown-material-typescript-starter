@@ -1,33 +1,28 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../layout/Layout'
-import PostListing from '../components/PostListing'
-import SEO from '../components/SEO'
-import config from '../../data/SiteConfig'
-import { makeStyles, Theme, ThemeProvider } from '@material-ui/core'
-import useLocalStorage from '../hooks/useLocalStorage'
-import themes from '../themes'
+import React, { useEffect } from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../layout/Layout";
+import PostListing from "../components/PostListing";
+import SEO from "../components/SEO";
+import config from "../../data/SiteConfig";
+import { makeStyles, Theme, ThemeProvider } from "@material-ui/core";
+import themes from "../themes";
 
-type ThemeMode = 'light' | 'dark'
+type ThemeMode = "light" | "dark";
 
 const Index = ({ data }) => {
-  const [theme, setTheme] = useLocalStorage('theme', 'light')
-
   return (
-    <ThemeProvider theme={themes[theme as ThemeMode]}>
-      <Layout>
-        <main>
-          <Helmet title={config.siteTitle} />
-          <SEO />
-          <PostListing postEdges={data.allMarkdownRemark.edges} />
-        </main>
-      </Layout>
-    </ThemeProvider>
-  )
-}
+    <Layout>
+      <main>
+        <Helmet title={config.siteTitle} />
+        <SEO />
+        <PostListing postEdges={data.allMarkdownRemark.edges} />
+      </main>
+    </Layout>
+  );
+};
 
-export default Index
+export default Index;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -55,4 +50,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

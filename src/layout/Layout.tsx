@@ -1,22 +1,23 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
-import Categories from '../components/Categories'
-import config from '../../data/SiteConfig'
-import { Container, Theme, CssBaseline, makeStyles, Grid } from '@material-ui/core'
+import React from "react";
+import { Helmet } from "react-helmet";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Categories from "../components/Categories";
+import config from "../../data/SiteConfig";
+import { Container, Theme, CssBaseline, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
   body: {
-    margin: theme.spacing(3, 8, 0, 8)
+    margin: theme.spacing(3, 8, 0, 8),
   },
   head: {
-    margin: theme.spacing(0)
+    margin: theme.spacing(0),
   },
 }));
 
 function Layout({ children, container = false, categories = true }) {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <>
@@ -24,7 +25,7 @@ function Layout({ children, container = false, categories = true }) {
 
       <Helmet title={config.siteDescription} defer={false} />
       <div className={classes.head}>
-        <Header siteTitle={config.siteTitle}/>
+        <Header siteTitle={config.siteTitle} />
       </div>
 
       <div className={classes.body}>
@@ -34,16 +35,14 @@ function Layout({ children, container = false, categories = true }) {
               <Categories />
             </Grid>
           ) : (
-              <div />
-            )}
+            <div />
+          )}
           <Grid item xs={12}>
             {container ? (
-              <Container component="main">
-                {children}
-              </Container>
+              <Container component="main">{children}</Container>
             ) : (
-                <main>{children}</main>
-              )}
+              <main>{children}</main>
+            )}
           </Grid>
           <Grid item xs={12}>
             <Footer />
@@ -51,7 +50,7 @@ function Layout({ children, container = false, categories = true }) {
         </Grid>
       </div>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

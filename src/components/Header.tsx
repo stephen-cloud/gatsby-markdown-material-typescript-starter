@@ -1,11 +1,19 @@
-import React from 'react'
-import config from '../../data/SiteConfig'
-import { AppBar, IconButton, Toolbar, Typography, Theme, makeStyles, createStyles } from '@material-ui/core';
-import HomeIcon from '@material-ui/icons/Home';
-import HelpIcon from '@material-ui/icons/Help';
-import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
-import Brightness4SharpIcon from '@material-ui/icons/Brightness4Sharp';
+import React from "react";
+import config from "../../data/SiteConfig";
+import {
+  AppBar,
+  IconButton,
+  Toolbar,
+  Typography,
+  Theme,
+  makeStyles,
+  createStyles,
+} from "@material-ui/core";
+import HomeIcon from "@material-ui/icons/Home";
+import HelpIcon from "@material-ui/icons/Help";
+import AlternateEmailIcon from "@material-ui/icons/AlternateEmail";
+import MenuBookIcon from "@material-ui/icons/MenuBook";
+import Brightness4SharpIcon from "@material-ui/icons/Brightness4Sharp";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -15,26 +23,31 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
     },
-  }),
+  })
 );
 
 export interface HeaderProps {
-  siteTitle?: string
-  theme: 'light' | 'dark'
-  onToggleTheme: () => void
+  siteTitle?: string;
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
 }
 
-function Header({ siteTitle = ''}: HeaderProps) {
+const toggleTheme = (theme: string) => {
+  const currentTheme = localStorage.getItem("theme");
+  localStorage.setItem("theme", currentTheme === "light" ? "dark" : "light");
+};
+
+function Header({ siteTitle = "" }: HeaderProps) {
   const classes = useStyles();
 
   return (
     <div>
       <AppBar position="static" color="inherit">
-        <Toolbar >
+        <Toolbar>
           <IconButton href="/" aria-label="home">
             <HomeIcon />
           </IconButton>
-          <Typography color="inherit" className={classes.title} variant="h6" >
+          <Typography color="inherit" className={classes.title} variant="h6">
             {config.siteTitle}
           </Typography>
           <IconButton href="/about" aria-label="about">
@@ -46,13 +59,15 @@ function Header({ siteTitle = ''}: HeaderProps) {
           <IconButton href="/bio" aria-label="bio">
             <MenuBookIcon />
           </IconButton>
-          <IconButton  aria-label="light dark">
+          <IconButton
+            aria-label="light dark"
+            onClick={() => toggleTheme("dark")}>
             <Brightness4SharpIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
