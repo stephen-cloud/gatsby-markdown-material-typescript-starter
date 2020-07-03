@@ -11,11 +11,8 @@ interface Category {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     categoryLink: {
-      margin: theme.spacing(0, 3, 0, 0)
+      margin: theme.spacing(0, 3, 0, 0),
     },
-    noUnderline: {
-      "text-decoration": "none"
-    }
   }),
 );
 
@@ -37,7 +34,7 @@ const Categories = () => {
     <div>
       {
         data.allMarkdownRemark.group.map((category: Category) => (
-          <Link className={classes.noUnderline} underline="none" variant="body1" className={classes.categoryLink} key={category.fieldValue}
+          <Link variant="body1" className={classes.categoryLink} color="inherit" key={category.fieldValue}
             href={`/${_.kebabCase(category.fieldValue)}`} >
             {category.fieldValue} ({category.totalCount})
           </Link>
