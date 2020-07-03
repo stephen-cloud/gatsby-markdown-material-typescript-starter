@@ -6,7 +6,7 @@ import PostTags from '../components/PostTags'
 import SocialLinks from '../components/SocialLinks'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
-import { Typography, Grid, IconButton, makeStyles, createStyles } from '@material-ui/core'
+import { Typography, Grid, IconButton, makeStyles, createStyles, Fab } from '@material-ui/core'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     right: {
       float: 'right'
+    },
+    left: {
+      float: 'left'
     },
   }),
 );
@@ -31,9 +34,6 @@ export default ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{`${post.title} | ${config.siteTitle}`}</title>
-      </Helmet>
       <SEO postPath={slug} postNode={postNode} postSEO />
       <Grid container spacing={2}>
         <Grid item xs={12}>
@@ -51,9 +51,9 @@ export default ({ data, pageContext }) => {
         <Grid item xs={12}>
           <Grid container alignItems="center" spacing={2}>
             <Grid item xs={12} md={1}>
-              <IconButton href={prevslug} arialabel="previous">
+              <Fab className={classes.left} size="small" href={nextslug} arialabel="next">
                 <NavigateBeforeIcon />
-              </IconButton>
+              </Fab>
             </Grid>
             <Grid item xs={12} md={5}>
               <Typography variant="body1">
@@ -66,9 +66,9 @@ export default ({ data, pageContext }) => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={1}>
-              <IconButton className={classes.right} href={nextslug} arialabel="next">
+              <Fab className={classes.right} size="small" href={nextslug} arialabel="next">
                 <NavigateNextIcon />
-              </IconButton>
+              </Fab>
             </Grid>
           </Grid>
         </Grid>

@@ -9,17 +9,14 @@ import { Typography, Grid } from '@material-ui/core'
 function CategoryTemplate({ data, pageContext }) {
   return (
     <Layout>
-      <main>
-        <Helmet title={` "${pageContext.category}" - ${config.siteTitle}`} />
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Typography color="inherit" variant="h6">Category: {pageContext.category}</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <PostListing postEdges={data.allMarkdownRemark.edges} />
-          </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Typography color="inherit" variant="h6">Category: {pageContext.category}</Typography>
         </Grid>
-      </main>
+        <Grid item xs={12}>
+          <PostListing postEdges={data.allMarkdownRemark.edges} />
+        </Grid>
+      </Grid>
     </Layout>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import _ from 'lodash'
-import { Theme, Button, makeStyles, createStyles, Link } from '@material-ui/core'
+import { Theme, Button, makeStyles, createStyles, Link, Typography } from '@material-ui/core'
 
 interface Category {
   fieldValue: string,
@@ -10,8 +10,8 @@ interface Category {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    categoryLink: {
-      margin: theme.spacing(0, 3, 0, 0),
+    categoryButton: {
+      margin: theme.spacing(0, 2, 0, 0),
     },
   }),
 );
@@ -34,10 +34,10 @@ const Categories = () => {
     <div>
       {
         data.allMarkdownRemark.group.map((category: Category) => (
-          <Link variant="body1" className={classes.categoryLink} color="inherit" key={category.fieldValue}
+          <Button size="small" variant="contained" className={classes.categoryButton} key={category.fieldValue}
             href={`/${_.kebabCase(category.fieldValue)}`} >
             {category.fieldValue} ({category.totalCount})
-          </Link>
+          </Button>
         ))
       }
     </div>

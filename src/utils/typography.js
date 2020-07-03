@@ -1,8 +1,8 @@
 import Typography from "typography"
-import gitHubTheme from 'typography-theme-github'
+// import { gitHubTheme as typographyTheme } from 'typography-theme-github'
+import { stowLakeTheme as typographyTheme}  from 'typography-theme-stow-lake'
 
-// const typography = new Typography(fairyGatesTheme)
-const typography = new Typography(gitHubTheme)
+const typography = new Typography(typographyTheme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
@@ -11,4 +11,5 @@ if (process.env.NODE_ENV !== `production`) {
 
 // Export helper functions
 export const { scale, rhythm, options } = typography
+
 export default typography

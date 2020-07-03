@@ -1,7 +1,18 @@
 import React from "react";
-import { Typography, Grid, Link } from "@material-ui/core";
+import { Typography, Grid, Link, Button, Card, CardContent, CardActionArea, CardActions, makeStyles, Theme, createStyles, IconButton, Fab } from "@material-ui/core";
+import ArrowForward from '@material-ui/icons/ArrowForward';
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    right: {
+      marginLeft: "auto"
+    }
+  })
+);
 
 const PostListing = ({ postEdges }) => {
+  const classes = useStyles()
+
   const getPostList = () => {
     const postList = postEdges.map((postEdge: any) => {
       return {
@@ -29,19 +40,18 @@ const PostListing = ({ postEdges }) => {
             <article>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
-                  <Link variant="h5" href={post.path} key={post.title} color="inherit">
-                    {post.title}
-                  </Link>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography variant="caption">
-                    {post.date} &mdash;{" "}
-                    <span>{post.categories.join(" / ")}</span> &mdash;{" "}
-                    {post.timeToRead} Min Read{" "}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography variant="body1">{post.excerpt}</Typography>
+                  <Card>
+                    <CardContent>
+                      <Typography variant="h5" color="textSecondary" gutterBottom>{post.title}</Typography>
+                      <Typography variant="caption" gutterBottom> {post.date} &mdash;{" "} <span>{post.categories.join(" / ")}</span> &mdash;{" "} {post.timeToRead} Min Read{" "} </Typography>
+                      <Typography variant="body1">{post.excerpt}</Typography>
+                    <CardActions>
+                      <Fab className={classes.right} size="medium" href={post.path} key={post.title} aria-label="view">
+                        <ArrowForward />
+                      </Fab>
+                    </CardActions>
+                    </CardContent>
+                  </Card>
                 </Grid>
               </Grid>
             </article>

@@ -1,6 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
-import { Link, Theme, makeStyles, createStyles } from '@material-ui/core'
+import { Link, Theme, makeStyles, createStyles, Button } from '@material-ui/core'
 
 interface Tags {
   tags: string[]
@@ -9,7 +9,7 @@ interface Tags {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     tagSpacing: {
-      margin: theme.spacing(0, 3, 0, 0)
+      margin: theme.spacing(0, 2, 0, 0)
     }
   })
 );
@@ -21,7 +21,7 @@ const PostTags = ({ tags }: Tags) => {
     <div>
       {tags &&
         tags.map(tag => (
-          <Link className={classes.tagSpacing} variant="body1" color="inherit" key={tag} href={`/tags/${_.kebabCase(tag)}`}>{tag}</Link>
+          <Button className={classes.tagSpacing} size="small" variant="contained" key={tag} href={`/tags/${_.kebabCase(tag)}`}>{tag}</Button>
         ))}
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import config from '../../data/SiteConfig'
-import { Theme, makeStyles, createStyles, Typography, Grid, Link, Divider } from '@material-ui/core'
+import { Theme, makeStyles, createStyles, Typography, Grid, Link, Divider, Button } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -15,13 +15,12 @@ function Footer() {
 
   return (
     <footer>
-      <Divider />
-      <Link className={classes.link} variant="caption" color="inherit" href="https://github.com/stephen-cloud/gatsby-markdown-material-typescript-starter">
+      <Button className={classes.link} variant="contained" href="https://github.com/stephen-cloud/gatsby-markdown-material-typescript-starter">
         On GitHub
-        </Link>
-      <Link className={classes.link} variant="caption" color="inherit" href="http://gatsby-markdown-material-typescript-starter.stephen.cloud/">
+      </Button>
+      <Button className={classes.link} variant="contained"  href="http://gatsby-markdown-material-typescript-starter.stephen.cloud/">
         Live Demo
-        </Link>
+      </Button>
       <Typography className={classes.link} variant="caption" >{config.copyright}</Typography>
     </footer>
   )
