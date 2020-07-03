@@ -3,11 +3,12 @@ import { blue, green, red, purple, blueGrey, indigo, pink, grey } from "@materia
 
 const theme = createMuiTheme({
   palette: {
+    type: "light",
     primary: {
-      main: blue[100],
+      main: indigo[400],
     },
     secondary: {
-      main: green[500]
+      main: green[700]
     },
   },
 });

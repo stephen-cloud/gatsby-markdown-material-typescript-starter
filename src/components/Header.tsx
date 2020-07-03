@@ -13,7 +13,6 @@ import HomeIcon from "@material-ui/icons/Home";
 import HelpIcon from "@material-ui/icons/Help";
 import AlternateEmailIcon from "@material-ui/icons/AlternateEmail";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
-import Brightness4SharpIcon from "@material-ui/icons/Brightness4Sharp";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,26 +29,26 @@ export interface HeaderProps {
   siteTitle?: string;
 }
 
-function Header({ siteTitle = "" }: HeaderProps) {
+function Header() {
   const classes = useStyles();
 
   return (
     <div>
       <AppBar position="static">
         <Toolbar>
-          <IconButton color="inherit" href="/" aria-label="home">
+          <IconButton href="/" color="inherit" aria-label="home">
             <HomeIcon />
           </IconButton>
-          <Typography color="inherit" className={classes.title} variant="h6">
+          <Typography className={classes.title} color="inherit" variant="h6">
             {config.siteTitle}
           </Typography>
-          <IconButton color="inherit" href="/about" aria-label="about">
+          <IconButton href="/about" color="inherit" aria-label="about">
             <HelpIcon />
           </IconButton>
-          <IconButton color="inherit" href="/contact" aria-label="contact">
+          <IconButton href="/contact" color="inherit" aria-label="contact">
             <AlternateEmailIcon />
           </IconButton>
-          <IconButton color="inherit" href="/bio" aria-label="bio">
+          <IconButton href="/bio" color="inherit" aria-label="bio">
             <MenuBookIcon />
           </IconButton>
         </Toolbar>

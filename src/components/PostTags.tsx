@@ -21,7 +21,7 @@ const PostTags = ({ tags }: Tags) => {
     <div>
       {tags &&
         tags.map(tag => (
-          <Link className={classes.tagSpacing} variant="body1" underline="none" key={tag} href={`/tags/${_.kebabCase(tag)}`}>{tag}</Link>
+          <Link className={classes.tagSpacing} variant="body1" color="inherit" key={tag} href={`/tags/${_.kebabCase(tag)}`}>{tag}</Link>
         ))}
     </div>
   )

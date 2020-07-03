@@ -29,8 +29,8 @@ const PostListing = ({ postEdges }) => {
             <article>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
-                  <Link underline="none" href={post.path} key={post.title}>
-                    <Typography variant="h5">{post.title}</Typography>
+                  <Link variant="h5" href={post.path} key={post.title} color="inherit">
+                    {post.title}
                   </Link>
                 </Grid>
                 <Grid item xs={12}>

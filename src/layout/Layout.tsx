@@ -11,9 +11,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   body: {
     margin: theme.spacing(3, 8, 0, 8),
   },
-  head: {
-    margin: theme.spacing(0),
-  },
 }));
 
 function Layout({ children, container = false, categories = true }) {
@@ -24,9 +21,8 @@ function Layout({ children, container = false, categories = true }) {
       <CssBaseline />
 
       <Helmet title={config.siteDescription} defer={false} />
-      <div className={classes.head}>
-        <Header siteTitle={config.siteTitle} />
-      </div>
+
+      <Header />
 
       <div className={classes.body}>
         <Grid container spacing={5}>
@@ -35,14 +31,14 @@ function Layout({ children, container = false, categories = true }) {
               <Categories />
             </Grid>
           ) : (
-            <div />
-          )}
+              <div />
+            )}
           <Grid item xs={12}>
             {container ? (
               <Container component="main">{children}</Container>
             ) : (
-              <main>{children}</main>
-            )}
+                <main>{children}</main>
+              )}
           </Grid>
           <Grid item xs={12}>
             <Footer />

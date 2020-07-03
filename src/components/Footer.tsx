@@ -16,10 +16,10 @@ function Footer() {
   return (
     <footer>
       <Divider />
-      <Link className={classes.link} variant="caption" href="https://github.com/stephen-cloud/gatsby-markdown-material-typescript-starter">
+      <Link className={classes.link} variant="caption" color="inherit" href="https://github.com/stephen-cloud/gatsby-markdown-material-typescript-starter">
         On GitHub
         </Link>
-      <Link className={classes.link} variant="caption" href="http://gatsby-markdown-material-typescript-starter.stephen.cloud/">
+      <Link className={classes.link} variant="caption" color="inherit" href="http://gatsby-markdown-material-typescript-starter.stephen.cloud/">
         Live Demo
         </Link>
       <Typography className={classes.link} variant="caption" >{config.copyright}</Typography>
