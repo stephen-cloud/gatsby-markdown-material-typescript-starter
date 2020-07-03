@@ -29,7 +29,7 @@ If you are interested in a foundation for building ultra-fast websites, you can 
 - Blazing fast loading times thanks to pre-rendered HTML and automatic chunk loading of JS files
 - Material UI
 - Responsive
-- Material light/dark mode toggle
+- Material theme via configuration
 - GitHub actions for publishing to GitHub pages
 - Separate components for everything
 - High configurability:

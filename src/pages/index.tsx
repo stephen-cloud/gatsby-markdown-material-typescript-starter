@@ -6,7 +6,7 @@ import PostListing from "../components/PostListing";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import { makeStyles, Theme, ThemeProvider } from "@material-ui/core";
-import themes from "../themes";
+import themes from "../theme";
 
 type ThemeMode = "light" | "dark";
 

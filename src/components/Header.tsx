@@ -28,41 +28,29 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export interface HeaderProps {
   siteTitle?: string;
-  theme: "light" | "dark";
-  onToggleTheme: () => void;
 }
-
-const toggleTheme = (theme: string) => {
-  const currentTheme = localStorage.getItem("theme");
-  localStorage.setItem("theme", currentTheme === "light" ? "dark" : "light");
-};
 
 function Header({ siteTitle = "" }: HeaderProps) {
   const classes = useStyles();
 
   return (
     <div>
-      <AppBar position="static" color="inherit">
+      <AppBar position="static">
         <Toolbar>
-          <IconButton href="/" aria-label="home">
+          <IconButton color="inherit" href="/" aria-label="home">
             <HomeIcon />
           </IconButton>
           <Typography color="inherit" className={classes.title} variant="h6">
             {config.siteTitle}
           </Typography>
-          <IconButton href="/about" aria-label="about">
+          <IconButton color="inherit" href="/about" aria-label="about">
             <HelpIcon />
           </IconButton>
-          <IconButton href="/contact" aria-label="contact">
+          <IconButton color="inherit" href="/contact" aria-label="contact">
             <AlternateEmailIcon />
           </IconButton>
-          <IconButton href="/bio" aria-label="bio">
+          <IconButton color="inherit" href="/bio" aria-label="bio">
             <MenuBookIcon />
-          </IconButton>
-          <IconButton
-            aria-label="light dark"
-            onClick={() => toggleTheme("dark")}>
-            <Brightness4SharpIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
